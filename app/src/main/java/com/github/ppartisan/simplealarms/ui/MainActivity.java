@@ -1,5 +1,7 @@
 package com.github.ppartisan.simplealarms.ui;
 
+import android.app.UiModeManager;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -79,6 +81,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //end function
+
+
+        //start blue light filtering function
+
+        UiModeManager uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+        uiManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+
+
+        //end blue light filtering function
+        UiModeManager uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
+        uiManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
+
+
     }
 
 }
