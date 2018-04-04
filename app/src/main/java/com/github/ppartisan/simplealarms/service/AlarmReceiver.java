@@ -53,6 +53,8 @@ public final class AlarmReceiver extends BroadcastReceiver {
 
         manager.notify(id, builder.build());
 
+
+
         //Reset Alarm manually
         setReminderAlarm(context, alarm);
     }

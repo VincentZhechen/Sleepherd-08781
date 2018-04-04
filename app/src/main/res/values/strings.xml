@@ -17,6 +17,9 @@
 
     <string name="label">Label</string>
     <string name="days">Days</string>
+
+    <string name="blockapp">Block App</string>
+
     <string name="edit_alarm">Edit Alarm</string>
     <string name="add_alarm">Add Alarm</string>
     <string name="add_label_hint">Add a note for this one.</string>
@@ -28,6 +31,12 @@
     <string name="delete_dialog_content">Are you sure you would like to delete this alarm?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+
+    <!--test sample apps-->
+    <string name="facebook">Facebook</string>
+    <string name="messenger">Messenger</string>
+    <string name="whatsapp">Whatsapp</string>
+
 
     <!-- Edit Alarm Menu -->
     <string name="action_save">Save</string>
