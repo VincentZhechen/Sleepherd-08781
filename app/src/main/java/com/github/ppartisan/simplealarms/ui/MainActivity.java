@@ -1,7 +1,14 @@
 package com.github.ppartisan.simplealarms.ui;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +23,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -93,7 +102,32 @@ public class MainActivity extends AppCompatActivity {
         UiModeManager uiManager = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
         uiManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
 
+        //list all apps on the device
+        PackageManager packageManager = getPackageManager();
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
 
+        List<ResolveInfo> appList = packageManager.queryIntentActivities(mainIntent, 0);
+        Collections.sort(appList, new ResolveInfo.DisplayNameComparator(packageManager));
+        List<PackageInfo> packs = packageManager.getInstalledPackages(0);
+        for (int i = 0; i < packs.size(); i++) {
+            PackageInfo p = packs.get(i);
+            ApplicationInfo a = p.applicationInfo;
+            // skip system apps if they shall not be included
+            if ((a.flags & ApplicationInfo.FLAG_SYSTEM) == 1) {
+                continue;
+            }
+            appList.add(p.packageName);
+        }
+
+
+        //getting the current foreground app
+        ActivityManager mActivityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> RunningTask = mActivityManager.getRunningTasks(1);
+        ActivityManager.RunningTaskInfo ar = RunningTask.get(0);
+        String activityOnTop = ar.topActivity.getClassName();
+
+        //https://stackoverflow.com/questions/19852069/blocking-android-apps-programmatically
     }
 
 }
