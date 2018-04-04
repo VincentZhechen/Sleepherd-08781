@@ -1,14 +1,14 @@
 <component name="libraryTable">
   <library name="com.android.support:support-media-compat-25.1.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/74e357d6de878ff6257e61bbce5534eb/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/74e357d6de878ff6257e61bbce5534eb/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/f82a0123019101017b77a84f9793fb5e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/f82a0123019101017b77a84f9793fb5e/res" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.1.0/support-media-compat-25.1.0-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.1.0/support-media-compat-25.1.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.1.0/support-media-compat-25.1.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.1.0/support-media-compat-25.1.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
