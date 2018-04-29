@@ -16,6 +16,9 @@ public final class Alarm implements Parcelable{
         label = in.readString();
         allDays = in.readSparseBooleanArray();
         isEnabled = in.readByte() != 0;
+
+
+
     }
 
     public static final Creator<Alarm> CREATOR = new Creator<Alarm>() {
