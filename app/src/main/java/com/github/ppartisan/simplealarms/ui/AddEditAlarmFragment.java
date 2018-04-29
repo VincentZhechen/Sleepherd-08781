@@ -31,6 +31,13 @@ public final class AddEditAlarmFragment extends Fragment {
     private EditText mLabel;
     private CheckBox mMon, mTues, mWed, mThurs, mFri, mSat, mSun;
 
+
+    // sleepherd update
+    private TimePicker mSleepTimePicker;
+    private CheckBox mBlueLight;
+    private CheckBox mSmartLight;
+    private CheckBox mAppBlock;
+
     public static AddEditAlarmFragment newInstance(Alarm alarm) {
 
         Bundle args = new Bundle();
@@ -54,6 +61,10 @@ public final class AddEditAlarmFragment extends Fragment {
         mTimePicker = (TimePicker) v.findViewById(R.id.edit_alarm_time_picker);
         ViewUtils.setTimePickerTime(mTimePicker, alarm.getTime());
 
+        mSleepTimePicker = (TimePicker) v.findViewById(R.id.edit_alarm_time_picker2);
+        ViewUtils.setTimePickerTime(mSleepTimePicker, alarm.getSleeptime());
+
+
         mLabel = (EditText) v.findViewById(R.id.edit_alarm_label);
         mLabel.setText(alarm.getLabel());
 
@@ -66,6 +77,14 @@ public final class AddEditAlarmFragment extends Fragment {
         mSun = (CheckBox) v.findViewById(R.id.edit_alarm_sun);
 
         setDayCheckboxes(alarm);
+
+        mSmartLight = (CheckBox) v.findViewById(R.id.edit_alarm_smartlight);
+        mBlueLight = (CheckBox) v.findViewById(R.id.edit_alarm_bluelight);
+        mAppBlock = (CheckBox) v.findViewById(R.id.edit_alarm_blockapps);
+
+        mSmartLight.setChecked(alarm.isSmartLightEnabled());
+        mBlueLight.setChecked(alarm.isBlueLightEnabled());
+        mAppBlock.setChecked(alarm.isAppBlockEnabled());
 
         return v;
     }
@@ -112,6 +131,14 @@ public final class AddEditAlarmFragment extends Fragment {
         time.set(Calendar.HOUR_OF_DAY, ViewUtils.getTimePickerHour(mTimePicker));
         alarm.setTime(time.getTimeInMillis());
 
+
+        final Calendar sleeptime = Calendar.getInstance();
+        sleeptime.set(Calendar.MINUTE, ViewUtils.getTimePickerMinute(mSleepTimePicker));
+        sleeptime.set(Calendar.HOUR_OF_DAY, ViewUtils.getTimePickerHour(mSleepTimePicker));
+        alarm.setSleeptime(sleeptime.getTimeInMillis());
+
+
+
         alarm.setLabel(mLabel.getText().toString());
 
         alarm.setDay(Alarm.MON, mMon.isChecked());
@@ -121,6 +148,12 @@ public final class AddEditAlarmFragment extends Fragment {
         alarm.setDay(Alarm.FRI, mFri.isChecked());
         alarm.setDay(Alarm.SAT, mSat.isChecked());
         alarm.setDay(Alarm.SUN, mSun.isChecked());
+
+        alarm.setAppBlockEnabled(mAppBlock.isChecked());
+        alarm.setBlueLightEnabled(mBlueLight.isChecked());
+        alarm.setSmartLightEnabled(mSmartLight.isChecked());
+
+
 
         final int rowsUpdated = DatabaseHelper.getInstance(getContext()).updateAlarm(alarm);
         final int messageId = (rowsUpdated == 1) ? R.string.update_complete : R.string.update_failed;

@@ -17,10 +17,14 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_FRI;
+import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_IS_APPBlOCKENABLED;
+import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_IS_BLUELIGHTENABLED;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_IS_ENABLED;
+import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_IS_SMARTLIGHTENABLED;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_LABEL;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_MON;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_SAT;
+import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_SLEEPTIME;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_SUN;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_THURS;
 import static com.github.ppartisan.simplealarms.data.DatabaseHelper.COL_TIME;
@@ -64,10 +68,15 @@ public final class AlarmUtils {
 
     public static ContentValues toContentValues(Alarm alarm) {
 
-        final ContentValues cv = new ContentValues(10);
+        final ContentValues cv = new ContentValues(14);
 
         cv.put(COL_TIME, alarm.getTime());
         cv.put(COL_LABEL, alarm.getLabel());
+
+        cv.put(COL_SLEEPTIME, alarm.getSleeptime());
+        cv.put(DatabaseHelper.COL_IS_APPBlOCKENABLED, alarm.isAppBlockEnabled());
+        cv.put(DatabaseHelper.COL_IS_BLUELIGHTENABLED, alarm.isBlueLightEnabled());
+        cv.put(DatabaseHelper.COL_IS_SMARTLIGHTENABLED, alarm.isSmartLightEnabled());
 
         final SparseBooleanArray days = alarm.getDays();
         cv.put(COL_MON, days.get(Alarm.MON) ? 1 : 0);
@@ -107,7 +116,15 @@ public final class AlarmUtils {
                 final boolean sun = c.getInt(c.getColumnIndex(COL_SUN)) == 1;
                 final boolean isEnabled = c.getInt(c.getColumnIndex(COL_IS_ENABLED)) == 1;
 
-                final Alarm alarm = new Alarm(id, time, label);
+                final long sleeptime = c.getLong(c.getColumnIndex(COL_SLEEPTIME));
+                final boolean isBlueLightEnabled = c.getInt(c.getColumnIndex(COL_IS_BLUELIGHTENABLED)) == 1;
+                final boolean isSmartLightEnabled = c.getInt(c.getColumnIndex(COL_IS_SMARTLIGHTENABLED)) == 1;
+                final boolean isAppBlockEnabled = c.getInt(c.getColumnIndex(COL_IS_APPBlOCKENABLED)) == 1;
+
+//                final Alarm alarm = new Alarm(id, time, label);
+
+                final Alarm alarm = new Alarm(id, time, sleeptime, label);
+
                 alarm.setDay(Alarm.MON, mon);
                 alarm.setDay(Alarm.TUES, tues);
                 alarm.setDay(Alarm.WED, wed);
@@ -117,6 +134,10 @@ public final class AlarmUtils {
                 alarm.setDay(Alarm.SUN, sun);
 
                 alarm.setIsEnabled(isEnabled);
+
+                alarm.setSmartLightEnabled(isSmartLightEnabled);
+                alarm.setBlueLightEnabled(isBlueLightEnabled);
+                alarm.setAppBlockEnabled(isAppBlockEnabled);
 
                 alarms.add(alarm);
 

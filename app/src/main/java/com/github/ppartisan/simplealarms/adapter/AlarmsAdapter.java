@@ -55,6 +55,12 @@ public final class AlarmsAdapter extends RecyclerView.Adapter<AlarmsAdapter.View
         holder.label.setText(alarm.getLabel());
         holder.days.setText(buildSelectedDays(alarm));
 
+
+        // add sleep and week up cycle
+        holder.sleeptime.setText(AlarmUtils.getReadableTime(alarm.getSleeptime()));
+        holder.sleepamPm.setText(AlarmUtils.getAmPm(alarm.getSleeptime()));
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +120,8 @@ public final class AlarmsAdapter extends RecyclerView.Adapter<AlarmsAdapter.View
 
         TextView time, amPm, label, days;
 
+        TextView sleeptime, sleepamPm;
+
         ViewHolder(View itemView) {
             super(itemView);
 
@@ -121,6 +129,11 @@ public final class AlarmsAdapter extends RecyclerView.Adapter<AlarmsAdapter.View
             amPm = (TextView) itemView.findViewById(R.id.ar_am_pm);
             label = (TextView) itemView.findViewById(R.id.ar_label);
             days = (TextView) itemView.findViewById(R.id.ar_days);
+
+
+            // add sleep time here
+            sleeptime = (TextView) itemView.findViewById(R.id.sl_time);
+            sleepamPm = (TextView) itemView.findViewById(R.id.sl_am_pm);
 
         }
     }

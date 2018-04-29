@@ -30,6 +30,15 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_SUN = "sun";
     public static final String COL_IS_ENABLED = "is_enabled";
 
+
+    // sleepherd update
+    public static final String COL_SLEEPTIME = "sleeptime";
+    public static final String COL_IS_BLUELIGHTENABLED = "is_bluelightenabled";
+    public static final String COL_IS_SMARTLIGHTENABLED = "is_smartlightenabled";
+    public static final String COL_IS_APPBlOCKENABLED = "is_appblockenabled";
+
+
+
     private static DatabaseHelper sInstance = null;
 
     public static synchronized DatabaseHelper getInstance(Context context) {
@@ -51,6 +60,7 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
         final String CREATE_ALARMS_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
                 _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_TIME + " INTEGER NOT NULL, " +
+                COL_SLEEPTIME + " INTEGER NOT NULL, " +
                 COL_LABEL + " TEXT, " +
                 COL_MON + " INTEGER NOT NULL, " +
                 COL_TUES + " INTEGER NOT NULL, " +
@@ -59,7 +69,10 @@ public final class DatabaseHelper extends SQLiteOpenHelper {
                 COL_FRI + " INTEGER NOT NULL, " +
                 COL_SAT + " INTEGER NOT NULL, " +
                 COL_SUN + " INTEGER NOT NULL, " +
-                COL_IS_ENABLED + " INTEGER NOT NULL" +
+                COL_IS_ENABLED + " INTEGER NOT NULL, " +
+                COL_IS_BLUELIGHTENABLED + " INTEGER NOT NULL, " +
+                COL_IS_SMARTLIGHTENABLED + " INTEGER NOT NULL, " +
+                COL_IS_APPBlOCKENABLED + " INTEGER NOT NULL" +
                 ");";
 
         sqLiteDatabase.execSQL(CREATE_ALARMS_TABLE);

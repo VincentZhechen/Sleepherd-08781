@@ -19,6 +19,11 @@ public final class Alarm implements Parcelable{
 
 
 
+        // add sleep time
+        sleeptime = in.readLong();
+        isBlueLightEnabled = in.readByte() != 0;
+        isAppBlockEnabled = in.readByte() != 0;
+        isSmartLightEnabled = in.readByte() != 0;
     }
 
     public static final Creator<Alarm> CREATOR = new Creator<Alarm>() {
@@ -45,6 +50,13 @@ public final class Alarm implements Parcelable{
         parcel.writeString(label);
         parcel.writeSparseBooleanArray(allDays);
         parcel.writeByte((byte) (isEnabled ? 1 : 0));
+
+
+        // update sleepherd
+        parcel.writeLong(sleeptime);
+        parcel.writeByte((byte) (isBlueLightEnabled ? 1 : 0));
+        parcel.writeByte((byte) (isSmartLightEnabled ? 1 : 0));
+        parcel.writeByte((byte) (isAppBlockEnabled ? 1 : 0));
     }
 
     @Retention(RetentionPolicy.SOURCE)
@@ -66,6 +78,14 @@ public final class Alarm implements Parcelable{
     private SparseBooleanArray allDays;
     private boolean isEnabled;
 
+
+    // sleep time update
+    private long sleeptime;
+    private boolean isBlueLightEnabled;
+    private boolean isSmartLightEnabled;
+    private boolean isAppBlockEnabled;
+
+
     public Alarm() {
         this(NO_ID);
     }
@@ -78,11 +98,53 @@ public final class Alarm implements Parcelable{
         this(id, time, null, days);
     }
 
+    public Alarm(long id, long time, long sleeptime,
+                 @Days int... days) {
+        this(id, time, sleeptime, false, false, false, null, days);
+    }
+
+    public Alarm(long id, long time, long sleeptime,
+                 boolean smartLight,
+                 boolean blueLight,
+                 boolean appBlock,
+                 @Days int... days) {
+        this(id, time, sleeptime, smartLight, blueLight, appBlock, null, days);
+    }
+
     public Alarm(long id, long time, String label, @Days int... days) {
         this.id = id;
         this.time = time;
         this.label = label;
         this.allDays = buildDaysArray(days);
+
+    }
+
+    public Alarm(long id, long time, long sleeptime, String label, @Days int... days) {
+        this.id = id;
+        this.time = time;
+        this.sleeptime = sleeptime;
+        this.label = label;
+        this.allDays = buildDaysArray(days);
+
+        this.isAppBlockEnabled = false;
+        this.isBlueLightEnabled = false;
+        this.isSmartLightEnabled = false;
+    }
+
+    public Alarm(long id, long time, long sleeptime,
+                 boolean smartLight,
+                 boolean blueLight,
+                 boolean appBlock,
+                 String label, @Days int... days) {
+        this.id = id;
+        this.time = time;
+        this.label = label;
+        this.allDays = buildDaysArray(days);
+
+        this.sleeptime = sleeptime;
+        this.isSmartLightEnabled = smartLight;
+        this.isBlueLightEnabled = blueLight;
+        this.isAppBlockEnabled = appBlock;
     }
 
     public long getId() {
@@ -95,6 +157,14 @@ public final class Alarm implements Parcelable{
 
     public long getTime() {
         return time;
+    }
+
+    public void setSleeptime(long sleeptime) {
+        this.sleeptime = sleeptime;
+    }
+
+    public long getSleeptime() {
+        return sleeptime;
     }
 
     public void setLabel(String label) {
@@ -125,14 +195,42 @@ public final class Alarm implements Parcelable{
         return isEnabled;
     }
 
+    public void setBlueLightEnabled(boolean blueLightEnabled) {
+        this.isBlueLightEnabled = blueLightEnabled;
+    }
+
+    public boolean isBlueLightEnabled() {
+        return isBlueLightEnabled;
+    }
+
+    public void setSmartLightEnabled(boolean smartLightEnabled) {
+        this.isSmartLightEnabled = smartLightEnabled;
+    }
+
+    public boolean isSmartLightEnabled() {
+        return isSmartLightEnabled;
+    }
+
+    public void setAppBlockEnabled(boolean appBlockEnabled) {
+        this.isAppBlockEnabled = appBlockEnabled;
+    }
+
+    public boolean isAppBlockEnabled() {
+        return isAppBlockEnabled;
+    }
+
     @Override
     public String toString() {
         return "Alarm{" +
                 "id=" + id +
                 ", time=" + time +
+                ", sleeptime=" + sleeptime +
                 ", label='" + label + '\'' +
                 ", allDays=" + allDays +
                 ", isEnabled=" + isEnabled +
+                ", isBlueLightEnabled=" + isBlueLightEnabled +
+                ", isSmartLightEnabled=" + isSmartLightEnabled +
+                ", isAppBlockEnabled=" + isAppBlockEnabled +
                 '}';
     }
 
