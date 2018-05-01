@@ -18,6 +18,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import com.github.ppartisan.simplealarms.R;
 
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 //
 //        //start function
 //        AsyncTask.execute(new Runnable() {
@@ -136,4 +140,6 @@ public class MainActivity extends AppCompatActivity {
 //
 //        //https://stackoverflow.com/questions/19852069/blocking-android-apps-programmatically
     }
+
+
 }

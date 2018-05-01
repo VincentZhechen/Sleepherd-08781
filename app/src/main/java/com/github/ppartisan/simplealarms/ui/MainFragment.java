@@ -9,8 +9,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -40,6 +41,8 @@ public final class MainFragment extends Fragment
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        setHasOptionsMenu(true);
 
         final View v = inflater.inflate(R.layout.fragment_main, container, false);
 
@@ -85,6 +88,13 @@ public final class MainFragment extends Fragment
     @Override
     public void onAlarmsLoaded(ArrayList<Alarm> alarms) {
         mAdapter.setAlarms(alarms);
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.edit_app_block_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

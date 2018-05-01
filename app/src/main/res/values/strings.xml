@@ -2,7 +2,7 @@
     <string name="app_name">Sleepherd</string>
 
     <!-- Main Activity/Fragment -->
-    <string name="empty_view_text">Press the Floating Action Button to add an alarm!</string>
+    <string name="empty_view_text">Press the Floating Action Button to add a sleep routine.</string>
 
     <!-- Edit Alarm Activity/Fragment -->
     <string name="time">Time</string>
