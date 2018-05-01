@@ -18,17 +18,17 @@
         android:gravity="center"
         android:text="@string/empty_view_text"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/block_app"
-        android:layout_width="56dp"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom|start"
-        android:layout_marginBottom="@dimen/fab_margin_default"
-        android:layout_marginLeft="@dimen/fab_margin_default"
-        android:layout_marginStart="@dimen/fab_margin_default"
-        app:backgroundTint="@color/icons"
-        app:srcCompat="@android:drawable/sym_def_app_icon"
-        tools:layout_editor_absoluteY="455dp" />
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/block_app"-->
+        <!--android:layout_width="56dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_gravity="bottom|start"-->
+        <!--android:layout_marginBottom="@dimen/fab_margin_default"-->
+        <!--android:layout_marginLeft="@dimen/fab_margin_default"-->
+        <!--android:layout_marginStart="@dimen/fab_margin_default"-->
+        <!--app:backgroundTint="@color/icons"-->
+        <!--app:srcCompat="@android:drawable/sym_def_app_icon"-->
+        <!--tools:layout_editor_absoluteY="455dp" />-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
