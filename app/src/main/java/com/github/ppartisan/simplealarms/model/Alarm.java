@@ -13,7 +13,7 @@ public final class Alarm implements Parcelable{
     private Alarm(Parcel in) {
         id = in.readLong();
         time = in.readLong();
-        label = in.readString();
+//        label = in.readString();
         allDays = in.readSparseBooleanArray();
         isEnabled = in.readByte() != 0;
 
@@ -47,7 +47,7 @@ public final class Alarm implements Parcelable{
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(id);
         parcel.writeLong(time);
-        parcel.writeString(label);
+//        parcel.writeString(label);
         parcel.writeSparseBooleanArray(allDays);
         parcel.writeByte((byte) (isEnabled ? 1 : 0));
 
@@ -74,7 +74,7 @@ public final class Alarm implements Parcelable{
 
     private final long id;
     private long time;
-    private String label;
+//    private String label;
     private SparseBooleanArray allDays;
     private boolean isEnabled;
 
@@ -95,35 +95,38 @@ public final class Alarm implements Parcelable{
     }
 
     public Alarm(long id, long time, @Days int... days) {
-        this(id, time, null, days);
-    }
-
-    public Alarm(long id, long time, long sleeptime,
-                 @Days int... days) {
-        this(id, time, sleeptime, false, false, false, null, days);
-    }
-
-    public Alarm(long id, long time, long sleeptime,
-                 boolean smartLight,
-                 boolean blueLight,
-                 boolean appBlock,
-                 @Days int... days) {
-        this(id, time, sleeptime, smartLight, blueLight, appBlock, null, days);
-    }
-
-    public Alarm(long id, long time, String label, @Days int... days) {
         this.id = id;
         this.time = time;
-        this.label = label;
+//        this.label = label;
         this.allDays = buildDaysArray(days);
-
     }
+//
+//    public Alarm(long id, long time, long sleeptime,
+//                 @Days int... days) {
+//        this(id, time, sleeptime, false, false, false, days);
+//    }
 
-    public Alarm(long id, long time, long sleeptime, String label, @Days int... days) {
+//    public Alarm(long id, long time, long sleeptime,
+//                 boolean smartLight,
+//                 boolean blueLight,
+//                 boolean appBlock,
+//                 @Days int... days) {
+//        this(id, time, sleeptime, smartLight, blueLight, appBlock, days);
+//    }
+
+//    public Alarm(long id, long time, @Days int... days) {
+//        this.id = id;
+//        this.time = time;
+////        this.label = label;
+//        this.allDays = buildDaysArray(days);
+//
+//    }
+
+    public Alarm(long id, long time, long sleeptime, @Days int... days) {
         this.id = id;
         this.time = time;
         this.sleeptime = sleeptime;
-        this.label = label;
+//        this.label = label;
         this.allDays = buildDaysArray(days);
 
         this.isAppBlockEnabled = false;
@@ -135,10 +138,10 @@ public final class Alarm implements Parcelable{
                  boolean smartLight,
                  boolean blueLight,
                  boolean appBlock,
-                 String label, @Days int... days) {
+                 @Days int... days) {
         this.id = id;
         this.time = time;
-        this.label = label;
+//        this.label = label;
         this.allDays = buildDaysArray(days);
 
         this.sleeptime = sleeptime;
@@ -167,13 +170,13 @@ public final class Alarm implements Parcelable{
         return sleeptime;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
-    }
+//    public void setLabel(String label) {
+//        this.label = label;
+//    }
 
-    public String getLabel() {
-        return label;
-    }
+//    public String getLabel() {
+//        return label;
+//    }
 
     public void setDay(@Days int day, boolean isAlarmed) {
         allDays.append(day, isAlarmed);
@@ -225,7 +228,7 @@ public final class Alarm implements Parcelable{
                 "id=" + id +
                 ", time=" + time +
                 ", sleeptime=" + sleeptime +
-                ", label='" + label + '\'' +
+//                ", label='" + label + '\'' +
                 ", allDays=" + allDays +
                 ", isEnabled=" + isEnabled +
                 ", isBlueLightEnabled=" + isBlueLightEnabled +
@@ -239,7 +242,7 @@ public final class Alarm implements Parcelable{
         int result = 17;
         result = 31 * result + (int) (id^(id>>>32));
         result = 31 * result + (int) (time^(time>>>32));
-        result = 31 * result + label.hashCode();
+//        result = 31 * result + label.hashCode();
         for(int i = 0; i < allDays.size(); i++) {
             result = 31 * result + (allDays.valueAt(i)? 1 : 0);
         }

@@ -43,8 +43,8 @@ public final class AlarmReceiver extends BroadcastReceiver {
         builder.setSmallIcon(R.drawable.ic_alarm_white_24dp);
         builder.setColor(ContextCompat.getColor(context, R.color.accent));
         builder.setContentTitle(context.getString(R.string.app_name));
-        builder.setContentText(alarm.getLabel());
-        builder.setTicker(alarm.getLabel());
+//        builder.setContentText(alarm.getLabel());
+//        builder.setTicker(alarm.getLabel());
         builder.setVibrate(new long[] {1000,500,1000,500,1000,500});
         builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         builder.setContentIntent(pIntent);

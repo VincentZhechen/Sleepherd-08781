@@ -52,7 +52,7 @@ public final class AlarmsAdapter extends RecyclerView.Adapter<AlarmsAdapter.View
 
         holder.time.setText(AlarmUtils.getReadableTime(alarm.getTime()));
         holder.amPm.setText(AlarmUtils.getAmPm(alarm.getTime()));
-        holder.label.setText(alarm.getLabel());
+//        holder.label.setText(alarm.getLabel());
         holder.days.setText(buildSelectedDays(alarm));
 
 
@@ -127,7 +127,7 @@ public final class AlarmsAdapter extends RecyclerView.Adapter<AlarmsAdapter.View
 
             time = (TextView) itemView.findViewById(R.id.ar_time);
             amPm = (TextView) itemView.findViewById(R.id.ar_am_pm);
-            label = (TextView) itemView.findViewById(R.id.ar_label);
+//            label = (TextView) itemView.findViewById(R.id.ar_label);
             days = (TextView) itemView.findViewById(R.id.ar_days);
 
 

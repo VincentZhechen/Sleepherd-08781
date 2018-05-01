@@ -28,7 +28,7 @@ import java.util.Calendar;
 public final class AddEditAlarmFragment extends Fragment {
 
     private TimePicker mTimePicker;
-    private EditText mLabel;
+//    private EditText mLabel;
     private CheckBox mMon, mTues, mWed, mThurs, mFri, mSat, mSun;
 
 
@@ -64,9 +64,9 @@ public final class AddEditAlarmFragment extends Fragment {
         mSleepTimePicker = (TimePicker) v.findViewById(R.id.edit_alarm_time_picker2);
         ViewUtils.setTimePickerTime(mSleepTimePicker, alarm.getSleeptime());
 
-
-        mLabel = (EditText) v.findViewById(R.id.edit_alarm_label);
-        mLabel.setText(alarm.getLabel());
+//
+//        mLabel = (EditText) v.findViewById(R.id.edit_alarm_label);
+//        mLabel.setText(alarm.getLabel());
 
         mMon = (CheckBox) v.findViewById(R.id.edit_alarm_mon);
         mTues = (CheckBox) v.findViewById(R.id.edit_alarm_tues);
@@ -139,7 +139,7 @@ public final class AddEditAlarmFragment extends Fragment {
 
 
 
-        alarm.setLabel(mLabel.getText().toString());
+//        alarm.setLabel(mLabel.getText().toString());
 
         alarm.setDay(Alarm.MON, mMon.isChecked());
         alarm.setDay(Alarm.TUES, mTues.isChecked());
