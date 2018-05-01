@@ -173,8 +173,21 @@ public final class AlarmUtils {
     }
 
     public static int getNotificationId(Alarm alarm) {
-        final long id = alarm.getId();
-        return (int) (id^(id>>>32));
+        return (int) alarm.getId();
+//        final long id = alarm.getId();
+//        return (int) (id^(id>>>32));
+    }
+
+    public static boolean getSmartLightSetting(Alarm alarm) {
+        return alarm.isSmartLightEnabled();
+    }
+
+    public static boolean getBlockAppSetting(Alarm alarm) {
+        return alarm.isAppBlockEnabled();
+    }
+
+    public static boolean getBlueLightSetting(Alarm alarm) {
+        return alarm.isBlueLightEnabled();
     }
 
     public static String getActiveDaysAsString(Alarm alarm) {
