@@ -132,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:textColor="@color/CC_Activate_Text_Color"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -148,6 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -164,6 +166,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -181,6 +184,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:background="@color/CC_Background_Color"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -197,6 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -215,6 +220,7 @@
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:background="@color/CC_Background_Color"
                 android:textStyle="normal|italic"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -232,6 +238,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:textColor="@color/CC_Label_Color"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
 
@@ -270,6 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
@@ -285,6 +293,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
+                android:theme="@style/MyCheckBox"
                 app:layout_gravity="center_vertical" />
 
             <TextView
