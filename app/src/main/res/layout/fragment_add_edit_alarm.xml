@@ -9,45 +9,47 @@
     android:scrollbarStyle="outsideOverlay">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/CC_Background_Color"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin">
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="@dimen/list_padding_vertical_small"-->
-            <!--android:text="@string/label"-->
-            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-            <!--tools:text="Label" />-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/list_padding_vertical_small"-->
+        <!--android:text="@string/label"-->
+        <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+        <!--tools:text="Label" />-->
 
         <!--<View-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="1dp"-->
-            <!--android:layout_marginBottom="@dimen/list_padding_vertical_small"-->
-            <!--android:background="@drawable/divider" />-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginBottom="@dimen/list_padding_vertical_small"-->
+        <!--android:background="@drawable/divider" />-->
 
         <!--<EditText-->
-            <!--android:id="@+id/edit_alarm_label"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
-            <!--android:hint="@string/add_label_hint"-->
-            <!--android:inputType="textCapWords"-->
-            <!--android:maxLength="15"-->
-            <!--android:textColor="@color/secondary_text"-->
-            <!--android:textStyle="italic" />-->
+        <!--android:id="@+id/edit_alarm_label"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
+        <!--android:hint="@string/add_label_hint"-->
+        <!--android:inputType="textCapWords"-->
+        <!--android:maxLength="15"-->
+        <!--android:textColor="@color/secondary_text"-->
+        <!--android:textStyle="italic" />-->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/sleep_time"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/CC_Label_Color" />
 
         <View
             android:layout_width="match_parent"
@@ -61,7 +63,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:timePickerMode="spinner"
+            android:amPmBackgroundColor="@color/CC_Background_Color"
+            android:amPmTextColor="@color/CC_Activate_Text_Color"
+            android:background="@color/CC_Background_Color"
+            android:headerAmPmTextAppearance="@color/CC_Activate_Text_Color"
+            android:headerBackground="@color/CC_Background_Color"
+            android:headerTimeTextAppearance="@color/CC_Activate_Text_Color"
+            android:numbersInnerTextColor="@color/CC_Activate_Text_Color"
+            android:timePickerMode="clock"
             tools:targetApi="lollipop" />
 
         <TextView
@@ -69,7 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/wake_time"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/CC_Label_Color" />
 
         <View
             android:layout_width="match_parent"
@@ -83,16 +93,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:timePickerMode="spinner"
+            android:headerBackground="@color/CC_Background_Color"
+            android:timePickerMode="clock"
             tools:targetApi="lollipop" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/days"
-            tools:text="Days"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/CC_Label_Color"
+            tools:text="Days" />
 
         <View
             android:layout_width="match_parent"
@@ -108,114 +120,119 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/monday"
-                tools:text="Monday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Monday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_mon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                android:textColor="@color/CC_Activate_Text_Color"
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/tuesday"
-                tools:text="Tuesday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Tuesday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_tues"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/wednesday"
-                tools:text="Wednesday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Wednesday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_wed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/thursday"
-                tools:text="Thursday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Thursday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_thurs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                android:background="@color/CC_Background_Color"
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/friday"
-                tools:text="Friday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Friday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_fri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/saturday"
-                tools:text="Saturday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Saturday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_sat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                android:background="@color/CC_Background_Color"
+                android:textStyle="normal|italic"
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_gravity="center_vertical|fill_horizontal"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/sunday"
-                tools:text="Sunday"
-                />
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical|fill_horizontal"
+                tools:text="Sunday" />
 
             <CheckBox
                 android:id="@+id/edit_alarm_sun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                android:textColor="@color/CC_Label_Color"
+                app:layout_gravity="center_vertical" />
 
 
         </android.support.v7.widget.GridLayout>
@@ -225,7 +242,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/settings"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/CC_Label_Color" />
 
 
         <View
@@ -244,6 +262,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/block_distracting_apps"
+                android:textColor="@color/CC_Label_Color"
                 app:layout_gravity="center_vertical|fill_horizontal" />
 
             <CheckBox
@@ -251,13 +270,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/filter_blue_light"
+                android:textColor="@color/CC_Label_Color"
                 app:layout_gravity="center_vertical|fill_horizontal" />
 
             <CheckBox
@@ -265,13 +285,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                app:layout_gravity="center_vertical" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
                 android:text="@string/gradual_wakeup_light"
+                android:textColor="@color/CC_Label_Color"
                 app:layout_gravity="center_vertical|fill_horizontal" />
 
             <CheckBox
@@ -279,7 +300,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/list_padding_vertical_small"
-                app:layout_gravity="center_vertical"/>
+                android:theme="@style/MyCheckBox"
+                app:layout_gravity="center_vertical" />
 
 
         </android.support.v7.widget.GridLayout>

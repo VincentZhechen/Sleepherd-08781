@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CC_Background_Color"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.github.ppartisan.simplealarms.view.EmptyRecyclerView
         android:id="@+id/recycler"
+        android:background="@color/CC_Background_Color"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -15,8 +17,10 @@
         android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/CC_Background_Color"
         android:gravity="center"
-        android:text="@string/empty_view_text"/>
+        android:text="@string/empty_view_text"
+        android:textColor="@color/CC_Label_Color" />
 
     <!--<android.support.design.widget.FloatingActionButton-->
         <!--android:id="@+id/block_app"-->
@@ -35,10 +39,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin_default"
         android:layout_marginEnd="@dimen/fab_margin_default"
         android:layout_marginRight="@dimen/fab_margin_default"
-        android:layout_marginBottom="@dimen/fab_margin_default"
-        app:srcCompat="@drawable/ic_alarm_white_24dp"
-        app:fabSize="auto"/>
+        app:backgroundTint="@color/CC_Label_Color"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/ic_alarm_white_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>

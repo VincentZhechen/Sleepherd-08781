@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#00BCD4</color>
-    <color name="primary_dark">#0097A7</color>
-    <color name="primary_light">#B2EBF2</color>
-    <color name="accent">#FF4081</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_text">#757575</color>
+    <!--<color name="primary">#00BCD4</color>-->
+    <!--<color name="primary_dark">#0097A7</color>-->
+    <!--<color name="primary_light">#B2EBF2</color>-->
+    <!--<color name="accent">#FF4081</color>-->
+    <!--<color name="primary_text">#212121</color>-->
+    <!--<color name="secondary_text">#757575</color>-->
     <color name="icons">#ffffff</color>
     <color name="divider">#BDBDBD</color>
+
+
+    <color name="secondary_text">#989eff</color>
+    <color name="primary_light">#989eff</color>
+    <color name="primary_dark">#40487E</color>
+    <color name="accent">#989eff</color>
+    <color name="primary_text">#212121</color>
+    <color name="primary">#40487E</color>
+    <color name="CC_Header_Color">#40487E</color>
+    <color name="CC_Label_Color">#989eff</color>
+    <color name="CC_Background_Color">#263b65</color>
+    <color name="CC_Activate_Text_Color">#ffffff</color>
+    <color name="CC_InActivate_Text_Color">#68718b</color>
 </resources>

@@ -94,7 +94,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
 //        if (alarm.isSmartLightEnabled()) {
 //            smartLightTurnOn();
 //        }
-        
+
 
         //Reset Alarm manually
         setReminderAlarm(context, alarm);
